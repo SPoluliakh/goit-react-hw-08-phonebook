@@ -1,11 +1,8 @@
-// import { createReducer, combineReducers } from '@reduxjs/toolkit';
-
 import {
   fetchContacts,
   deleteContacts,
   postContacts,
 } from './contactsOperations';
-
 import { createSlice } from '@reduxjs/toolkit';
 
 export const contactSlice = createSlice({
@@ -60,7 +57,6 @@ export const contactSlice = createSlice({
         isLoading: false,
       };
     },
-
     [postContacts.fulfilled]: (state, { payload }) => {
       return {
         ...state,
