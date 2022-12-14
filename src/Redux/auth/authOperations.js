@@ -6,7 +6,6 @@ export const register = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const user = await fetch.register(credentials);
-      console.log(user);
       return user;
     } catch (err) {
       thunkAPI.rejectWithValue(err);
@@ -42,9 +41,10 @@ export const refreshUser = createAsyncThunk(
   async (_, thunkAPI) => {
     // Reading the token from the state via getState()
     const state = thunkAPI.getState();
+    console.log(state.auth.token);
     const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
+    if (!persistedToken) {
       // If there is no token, exit without performing any request
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }

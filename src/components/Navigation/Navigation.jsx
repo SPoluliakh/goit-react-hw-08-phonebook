@@ -1,19 +1,14 @@
 import { Link } from 'react-router-dom';
-
-const navItems = [
-  { href: '/', text: 'Home ' },
-  { href: 'phoneBook', text: 'Phone book ' },
-];
+import { useAuth } from 'components/hooks/useAuth';
 
 export const Navigation = () => {
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <nav>
-        {navItems.map(({ href, text }) => (
-          <Link key={text} to={href}>
-            {text}
-          </Link>
-        ))}
+        <Link to="/">Home</Link>
+
+        {isLoggedIn && <Link to="phoneBook">Phone book</Link>}
       </nav>
     </>
   );
