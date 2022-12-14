@@ -19,8 +19,8 @@ export const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(register.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        state.user = action.payload?.user;
+        state.token = action.payload?.token;
         state.isLoggedIn = true;
         state.isLoading = false;
       })
@@ -33,8 +33,8 @@ export const authSlice = createSlice({
       .addCase(logIn.pending, (state, _) => (state.isLoading = true))
       .addCase(logIn.fulfilled, (state, action) => {
         console.log(action.payload);
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        state.user = action.payload?.user;
+        state.token = action.payload?.token;
         state.isLoggedIn = true;
         state.isLoading = false;
       })

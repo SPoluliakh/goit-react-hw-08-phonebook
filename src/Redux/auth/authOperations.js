@@ -23,8 +23,8 @@ export const logIn = createAsyncThunk(
       console.log(user);
       return user;
     } catch (err) {
-      console.log(err);
-      thunkAPI.rejectWithValue(err);
+      console.log(err.message);
+      thunkAPI.rejectWithValue(err.message);
     }
   }
 );

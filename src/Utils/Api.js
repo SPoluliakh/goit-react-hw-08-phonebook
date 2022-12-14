@@ -12,9 +12,7 @@ export const clearAuthHeader = () => {
 // Register
 export const register = async credentials => {
   const res = await axios.post('/users/signup', credentials);
-
   setAuthHeader(res.data.token);
-
   return res.data;
 };
 
