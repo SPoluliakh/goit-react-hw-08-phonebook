@@ -1,7 +1,7 @@
 import ContactForm from '../../components/Form';
 import ContactList from '../../components/ContactList';
 import Filter from '../../components/Filter';
-import { Box } from '../../components/Utilits/Box';
+import { Box } from '../../Utils/Box';
 import { MaineTitle } from './PhoneBook.styled';
 
 export const PhoneBookPage = () => {

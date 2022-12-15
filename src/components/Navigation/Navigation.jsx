@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
 import { useAuth } from 'components/hooks/useAuth';
+import * as SC from './Navigation.styled';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
+        <SC.Link to="/">Home</SC.Link>
 
-        {isLoggedIn && <Link to="phoneBook">Phone book</Link>}
+        {isLoggedIn && <SC.Link to="phoneBook">Phone book</SC.Link>}
       </nav>
     </>
   );

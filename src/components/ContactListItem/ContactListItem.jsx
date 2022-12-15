@@ -11,8 +11,13 @@ const ContactListItem = ({ name, number, id }) => {
         <ListItemText>
           {name}: {number}
         </ListItemText>
-        <ListItemBtn type="button" onClick={() => dispatch(deleteContacts(id))}>
-          Delet
+        <ListItemBtn
+          variant="contained"
+          type="button"
+          aria-label="delete contact"
+          onClick={() => dispatch(deleteContacts(id))}
+        >
+          Delete
         </ListItemBtn>
       </ListItem>
     </>

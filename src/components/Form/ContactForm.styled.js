@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from '@mui/material';
 
 export const ContactFrm = styled.form`
   display: flex;
@@ -15,8 +16,8 @@ export const FormInput = styled.input`
   margin-top: ${p => p.theme.space[2]}px;
 `;
 
-export const FormBtn = styled.button`
-  width: 100px;
+export const FormBtn = styled(Button)`
+  min-width: 100px;
   margin: 0 auto;
   cursor: pointer;
   padding: ${p => p.theme.space[1]}px;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box } from '../Utilits/Box';
+import { Box } from '../../Utils/Box';
 import {
   ContactFrm,
   FormLabel,
@@ -82,7 +82,9 @@ const ContactForm = () => {
           />
         </FormLabel>
 
-        <FormBtn type="submit">Add contact</FormBtn>
+        <FormBtn variant="contained" aria-label="add contact" type="submit">
+          Add contact
+        </FormBtn>
       </ContactFrm>
     </Box>
   );

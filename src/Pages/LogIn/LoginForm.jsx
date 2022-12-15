@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'Redux/auth/authOperations';
+import { Button } from '@mui/material';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,9 @@ export const LoginPage = () => {
         Password
         <input type="password" name="password" />
       </label>
-      <button type="submit">Log In</button>
+      <Button variant="contained" type="submit">
+        Log In
+      </Button>
     </form>
   );
 };

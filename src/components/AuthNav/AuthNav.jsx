@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import * as SC from './AuthNav.styled';
 
 const navItems = [
   { href: 'register', text: 'Register ' },
@@ -9,9 +9,9 @@ export const AuthNav = () => {
   return (
     <div>
       {navItems.map(({ href, text }) => (
-        <Link key={text} to={href}>
+        <SC.Link key={text} to={href}>
           {text}
-        </Link>
+        </SC.Link>
       ))}
     </div>
   );

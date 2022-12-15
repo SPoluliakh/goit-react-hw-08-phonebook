@@ -8,7 +8,7 @@ import { Layout } from 'components/Layout/Layout';
 import { PhoneBookPage } from 'Pages/PhoneBook/PhoneBook';
 import { RegisterPage } from 'Pages/Registre/RegisterForm';
 import { LoginPage } from 'Pages/LogIn/LoginForm';
-import { HomePage } from 'Pages/Home/Home';
+import { HomePage } from 'Pages/HomePage/HomePage';
 import { PrivateRout } from 'components/CustomRouts/PrivateRoute';
 import { RestrictedRout } from 'components/CustomRouts/RestrictedRout';
 
