@@ -35,18 +35,18 @@ export const refreshUser = async () => {
   return res.data;
 };
 
-//
+//Get all contacts
 export const fetchContacts = async () => {
   const { data } = await axios.get(`/contacts`);
   return data;
 };
-
+// Delete contact
 export const deleteContacts = async id => {
   const { data } = await axios.delete(`/contacts/${id}`);
   return data;
 };
-
+// Add contact
 export const postContacts = async contact => {
-  const { data } = await axios.post(`/contacts`, contact);
+  const { data } = await axios.post('/contacts', contact);
   return data;
 };

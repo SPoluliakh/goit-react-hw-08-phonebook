@@ -41,8 +41,7 @@ const ContactForm = () => {
     }
     const contactToAdd = {
       name,
-
-      phone: number,
+      number,
     };
     dispatch(postContacts(contactToAdd));
     reset();
