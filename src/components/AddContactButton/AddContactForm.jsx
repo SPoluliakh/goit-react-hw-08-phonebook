@@ -5,7 +5,7 @@ import {
   FormLabel,
   FormInput,
   FormBtn,
-} from './ContactForm.styled';
+} from './AddContactForm.styled';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { postContacts } from 'Redux/contacts/contactsOperations';
@@ -54,7 +54,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Box border="contactForm" padding={2}>
+    <Box border="contactForm" padding={2} width="400px">
       <ContactFrm onSubmit={handleSubmit}>
         <FormLabel>
           Name

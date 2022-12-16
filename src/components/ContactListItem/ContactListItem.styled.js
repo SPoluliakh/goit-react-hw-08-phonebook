@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '@mui/material';
 
 export const ListItem = styled.li`
   display: flex;
@@ -17,11 +16,11 @@ export const ListItemText = styled.p`
   font-size: ${p => p.theme.fontSizes.ml}px;
 `;
 
-export const ListItemBtn = styled(Button)`
+export const ListItemBtn = styled.button`
   justify-content: start;
   margin-right: ${p => p.theme.space[2]}px;
   cursor: pointer;
-  background-color: black;
+  background-color: ${p => p.theme.colors.deletBtn};
   transition: box-shadow 150ms linear;
   padding-left: ${p => p.theme.space[2]}px;
   padding-right: ${p => p.theme.space[2]}px;

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'Redux/auth/authOperations';
-import { FilledInput } from '@mui/material';
+import { Input } from '@mui/material';
 
 export const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -21,15 +21,15 @@ export const RegisterPage = () => {
     <form onSubmit={handleSubmit} autoComplete="off">
       <label>
         Username
-        <FilledInput type="text" name="name" />
+        <Input type="text" name="name" />
       </label>
       <label>
         Email
-        <FilledInput type="email" name="email" />
+        <Input type="email" name="email" />
       </label>
       <label>
         Password
-        <FilledInput type="password" name="password" />
+        <Input type="password" name="password" />
       </label>
       <button type="submit">Register</button>
     </form>

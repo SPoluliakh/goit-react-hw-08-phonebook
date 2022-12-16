@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { List } from './ContactList.styled';
+import * as SC from './ContactList.styled';
 import ContactListItem from '../ContactListItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from '../../Redux/contacts/filterSlice';
@@ -24,13 +24,13 @@ const ContactList = () => {
 
   return (
     <>
-      <h2>Contacts : {findContactbyName.length}</h2>
+      <SC.TotalContacts>Contacts : {findContactbyName.length}</SC.TotalContacts>
 
-      <List>
+      <SC.List>
         {findContactbyName.map(({ name, phone, id }) => (
           <ContactListItem key={id} name={name} number={phone} id={id} />
         ))}
-      </List>
+      </SC.List>
     </>
   );
 };

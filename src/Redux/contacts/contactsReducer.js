@@ -2,6 +2,7 @@ import {
   fetchContacts,
   deleteContacts,
   postContacts,
+  changeContact,
 } from './contactsOperations';
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -72,6 +73,34 @@ export const contactSlice = createSlice({
       };
     },
     [postContacts.rejected]: (state, { payload }) => {
+      return {
+        ...state,
+        error: payload,
+        isLoading: false,
+      };
+    },
+
+    [changeContact.fulfilled]: (state, { payload }) => {
+      const oldContacts = state.contacts.findIndex(
+        contact => contact.id === payload.id
+      );
+      const newContacts = state.contacts.filter(
+        contact => contact.id !== oldContacts
+      );
+      return {
+        ...state,
+        contacts: [...newContacts, payload],
+        isLoading: false,
+      };
+    },
+    [changeContact.pending]: (state, _) => {
+      return {
+        ...state,
+        isLoading: true,
+        error: null,
+      };
+    },
+    [changeContact.rejected]: (state, { payload }) => {
       return {
         ...state,
         error: payload,

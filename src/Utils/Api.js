@@ -50,3 +50,9 @@ export const postContacts = async contact => {
   const { data } = await axios.post('/contacts', contact);
   return data;
 };
+
+// Change contact
+export const changeContact = async (id, contact) => {
+  const { data } = await axios.patch(`/contacts/${id}`, contact);
+  return data;
+};

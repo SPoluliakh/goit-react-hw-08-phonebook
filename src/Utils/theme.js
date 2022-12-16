@@ -32,11 +32,6 @@ export const theme = Object.freeze({
     primary: '#07c',
     secondary: '#30c',
 
-    muted: '#f6f6f6',
-    profile: 'yellow',
-    profileList: 'rgba(255, 213, 0, 0.73)',
-    statsTitle: '#00000099',
-
     deletBtn: 'lightcoral',
     tableBorderColor: 'rgb(0, 128, 255)',
     tableBgcHead: '#bcebdd',
