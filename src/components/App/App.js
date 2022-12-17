@@ -1,9 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAuth } from 'components/hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'Redux/auth/authOperations';
-
 import { Layout } from 'components/Layout/Layout';
 import { PhoneBookPage } from 'Pages/PhoneBook/PhoneBook';
 import { RegisterPage } from 'Pages/Registre/RegisterForm';
@@ -15,13 +14,23 @@ import { RestrictedRout } from 'components/CustomRouts/RestrictedRout';
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch]);
+    navigate(`/${location.pathname}`);
+  }, [dispatch, navigate, location.pathname]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <b
+      style={{
+        display: 'block',
+        textAlign: 'center',
+      }}
+    >
+      Refreshing user...
+    </b>
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
