@@ -2,10 +2,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Box } from 'Utils/Box';
 import { filterContact, getFilter } from '../../Redux/contacts/filterSlice';
 import * as SC from './Filter.style';
-import AddContactButton from 'components/AddContactButton/AddContactButton';
+import { AddContactButton } from 'components/AddContactButton/AddContactButton';
 import { FcSearch } from 'react-icons/fc';
 
-const Filter = () => {
+export const Filter = () => {
   const filterList = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
@@ -32,5 +32,3 @@ const Filter = () => {
     </Box>
   );
 };
-
-export default Filter;

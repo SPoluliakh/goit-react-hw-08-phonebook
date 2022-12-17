@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Box } from '../../Utils/Box';
 import {
   ContactFrm,
@@ -6,12 +7,11 @@ import {
   FormInput,
   FormBtn,
 } from './AddContactForm.styled';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { postContacts } from 'Redux/contacts/contactsOperations';
 import { getContacts } from '../../Redux/contacts/contactsSelectors';
 
-const AddContactForm = ({ toggleModal }) => {
+export const AddContactForm = ({ toggleModal }) => {
   const contactList = useSelector(getContacts);
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -91,4 +91,6 @@ const AddContactForm = ({ toggleModal }) => {
   );
 };
 
-export default AddContactForm;
+AddContactForm.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+};

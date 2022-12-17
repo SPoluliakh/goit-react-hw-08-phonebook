@@ -5,7 +5,7 @@ import { deleteContacts } from 'Redux/contacts/contactsOperations';
 import ChangeContact from 'components/ChangeContact/ChangeContact';
 import { FcCancel, FcPhoneAndroid } from 'react-icons/fc';
 
-const ContactListItem = ({ name, number, id }) => {
+export const ContactListItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
 
   return (
@@ -27,8 +27,6 @@ const ContactListItem = ({ name, number, id }) => {
     </>
   );
 };
-
-export default ContactListItem;
 
 ContactListItem.propTypes = {
   name: PropTypes.string,

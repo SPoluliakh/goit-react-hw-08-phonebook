@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Modal } from 'components/Modal/Modal';
-import AddContactForm from 'components/AddContactButton/AddContactForm';
+import { AddContactForm } from 'components/AddContactButton/AddContactForm';
 import { FaUserPlus } from 'react-icons/fa';
 import * as SC from './AddContactButton.styled';
 
-// ; FaUserEdit
-
-const AddContactButton = () => {
+export const AddContactButton = () => {
   const [addContact, setAddContact] = useState(false);
 
   const toggleModal = () => {
@@ -26,5 +24,3 @@ const AddContactButton = () => {
     </>
   );
 };
-
-export default AddContactButton;

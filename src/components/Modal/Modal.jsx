@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { createPortal } from 'react-dom';
 import { ImCross } from 'react-icons/im';
-import { Overlay, Inner, CloseBtn } from './Modal.styled';
+import * as SC from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -29,14 +29,14 @@ export const Modal = ({ toggleModal, children }) => {
   };
 
   return createPortal(
-    <Overlay onClick={closeOnClick}>
-      <Inner>
+    <SC.Overlay onClick={closeOnClick}>
+      <SC.Inner>
         {children}
-        <CloseBtn type="button" onClick={toggleModal}>
+        <SC.CloseBtn type="button" onClick={toggleModal}>
           <ImCross size="16" />
-        </CloseBtn>
-      </Inner>
-    </Overlay>,
+        </SC.CloseBtn>
+      </SC.Inner>
+    </SC.Overlay>,
 
     modalRoot
   );

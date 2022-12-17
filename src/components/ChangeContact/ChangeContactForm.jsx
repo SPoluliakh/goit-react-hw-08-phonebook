@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeContact } from 'Redux/contacts/contactsOperations';
 import { getContacts } from 'Redux/contacts/contactsSelectors';
 
-const ChangeContactForm = ({ id, toggleModal }) => {
+export const ChangeContactForm = ({ id, toggleModal }) => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
   const [name, setName] = useState(() => {
@@ -95,8 +95,7 @@ const ChangeContactForm = ({ id, toggleModal }) => {
   );
 };
 
-export default ChangeContactForm;
-
 ChangeContactForm.propTypes = {
   id: PropTypes.string,
+  toggleModal: PropTypes.func,
 };

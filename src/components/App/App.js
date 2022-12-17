@@ -4,9 +4,9 @@ import { useAuth } from 'components/hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'Redux/auth/authOperations';
 import { Layout } from 'components/Layout/Layout';
-import { PhoneBookPage } from 'Pages/PhoneBook/PhoneBook';
+import { PhoneBookPage } from 'Pages/PhoneBookPage/PhoneBook';
 import { RegisterPage } from 'Pages/Registre/RegisterForm';
-import { LoginPage } from 'Pages/LogIn/LoginForm';
+import { LoginPage } from 'Pages/LogInPage/LoginForm';
 import { HomePage } from 'Pages/HomePage/HomePage';
 import { PrivateRout } from 'components/CustomRouts/PrivateRoute';
 import { RestrictedRout } from 'components/CustomRouts/RestrictedRout';
@@ -29,7 +29,7 @@ export const App = () => {
         textAlign: 'center',
       }}
     >
-      Refreshing user...
+      Page is refreshing ...
     </b>
   ) : (
     <Routes>

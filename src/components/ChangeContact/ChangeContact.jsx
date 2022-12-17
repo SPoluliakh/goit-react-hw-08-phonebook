@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Modal } from 'components/Modal/Modal';
-import ChangeContactForm from './ChangeContactForm';
+import { ChangeContactForm } from './ChangeContactForm';
 import { FaUserEdit } from 'react-icons/fa';
 import * as SC from './ChangeContact.styled';
 

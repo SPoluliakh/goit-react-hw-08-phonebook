@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import * as SC from './ContactList.styled';
-import ContactListItem from '../ContactListItem';
+import { ContactListItem } from '../ContactListItem/ContactListItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from '../../Redux/contacts/filterSlice';
 import * as contactsOperations from '../../Redux/contacts/contactsOperations';
 import { getContacts } from 'Redux/contacts/contactsSelectors';
 
-const ContactList = () => {
+export const ContactList = () => {
   const contactList = useSelector(getContacts);
   const filterItem = useSelector(getFilter);
   const dispatch = useDispatch();
@@ -36,5 +36,3 @@ const ContactList = () => {
     </>
   );
 };
-
-export default ContactList;
