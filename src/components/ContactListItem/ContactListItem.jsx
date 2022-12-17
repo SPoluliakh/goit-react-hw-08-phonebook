@@ -1,28 +1,29 @@
 import PropTypes from 'prop-types';
-import { ListItem, ListItemText, ListItemBtn } from './ContactListItem.styled';
+import * as SC from './ContactListItem.styled';
 import { useDispatch } from 'react-redux';
 import { deleteContacts } from 'Redux/contacts/contactsOperations';
 import ChangeContact from 'components/ChangeContact/ChangeContact';
+import { FcCancel, FcPhoneAndroid } from 'react-icons/fc';
 
 const ContactListItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
 
   return (
     <>
-      <ListItem>
+      <SC.ListItem>
         <ChangeContact id={id} />
-        <ListItemText>
-          {name}: {number}
-        </ListItemText>
-        <ListItemBtn
+        <SC.ListItemText>
+          {<FcPhoneAndroid size="17px" />} {name}: {number}
+        </SC.ListItemText>
+        <SC.ListItemBtn
           variant="contained"
           type="button"
           aria-label="delete contact"
           onClick={() => dispatch(deleteContacts(id))}
         >
-          Delete
-        </ListItemBtn>
-      </ListItem>
+          {<FcCancel size="28px" />}
+        </SC.ListItemBtn>
+      </SC.ListItem>
     </>
   );
 };

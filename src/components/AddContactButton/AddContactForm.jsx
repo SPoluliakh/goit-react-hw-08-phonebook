@@ -11,7 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { postContacts } from 'Redux/contacts/contactsOperations';
 import { getContacts } from '../../Redux/contacts/contactsSelectors';
 
-const ContactForm = ({ toggleModal }) => {
+const AddContactForm = ({ toggleModal }) => {
   const contactList = useSelector(getContacts);
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -55,7 +55,7 @@ const ContactForm = ({ toggleModal }) => {
   };
 
   return (
-    <Box border="contactForm" padding={2} width="400px">
+    <Box border="contactForm" padding={5} width="400px">
       <ContactFrm onSubmit={handleSubmit}>
         <FormLabel>
           Name
@@ -91,4 +91,4 @@ const ContactForm = ({ toggleModal }) => {
   );
 };
 
-export default ContactForm;
+export default AddContactForm;

@@ -10,4 +10,6 @@ export const List = styled.ul`
 
 export const TotalContacts = styled.h3`
   margin: ${p => p.theme.space[0]}px;
+  margin-bottom: ${p => p.theme.space[3]}px;
+  text-align: center;
 `;

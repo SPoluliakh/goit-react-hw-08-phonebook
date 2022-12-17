@@ -5,7 +5,7 @@ import { MaineTitle } from './PhoneBook.styled';
 export const PhoneBookPage = () => {
   return (
     <>
-      <MaineTitle>Phonebook</MaineTitle>
+      <MaineTitle>Easy manage your contacts</MaineTitle>
       <Filter />
       <ContactList />
     </>

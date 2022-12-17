@@ -59,7 +59,7 @@ const ChangeContactForm = ({ id, toggleModal }) => {
   };
 
   return (
-    <Box border="contactForm" padding={2} width="400px">
+    <Box border="contactForm" padding={5} width="400px">
       <ContactFrm onSubmit={handleSubmit}>
         <FormLabel>
           Name

@@ -8,7 +8,7 @@ export const Overlay = styled.div`
   left: 0;
   z-index: 20;
 
-  background-color: ${p => p.theme.colors.background};
+  background-color: ${p => p.theme.colors.backdropBackground};
 `;
 
 export const Inner = styled.div`
@@ -19,10 +19,20 @@ export const Inner = styled.div`
 
   max-width: 1200px;
   max-height: auto;
+  background-color: ${p => p.theme.colors.modalBackground};
 `;
 
 export const CloseBtn = styled.button`
   position: absolute;
   top: 5px;
   right: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 250ms linear;
+
+  :hover {
+    color: red;
+  }
 `;

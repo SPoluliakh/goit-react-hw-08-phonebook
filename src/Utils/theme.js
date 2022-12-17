@@ -28,7 +28,8 @@ export const theme = Object.freeze({
     statsText: '#ff9',
     linkActive: 'red',
     linkHover: 'black',
-    background: '#fff',
+    backdropBackground: '#101510a1',
+    modalBackground: '#fff',
     primary: '#07c',
     secondary: '#30c',
 
@@ -40,7 +41,7 @@ export const theme = Object.freeze({
   },
   radii: {
     none: '0',
-    normal: '5px',
+    normal: '3px',
     round: '50%',
   },
   borders: {

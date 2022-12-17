@@ -3,6 +3,7 @@ import { Box } from 'Utils/Box';
 import { filterContact, getFilter } from '../../Redux/contacts/filterSlice';
 import * as SC from './Filter.style';
 import AddContactButton from 'components/AddContactButton/AddContactButton';
+import { FcSearch } from 'react-icons/fc';
 
 const Filter = () => {
   const filterList = useSelector(getFilter);
@@ -15,7 +16,9 @@ const Filter = () => {
       mb={3}
     >
       <Box display="flex" justifyContent="center" alignItems="center">
-        <SC.Title>Find contact </SC.Title>
+        <SC.Title>
+          <FcSearch size="24px" />
+        </SC.Title>
         <SC.FindArea
           type="text"
           name="filter"

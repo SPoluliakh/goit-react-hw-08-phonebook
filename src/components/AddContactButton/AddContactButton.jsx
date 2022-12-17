@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Modal } from 'components/Modal/Modal';
-import ContactForm from 'components/AddContactButton/AddContactForm';
+import AddContactForm from 'components/AddContactButton/AddContactForm';
+import { FaUserPlus } from 'react-icons/fa';
+import * as SC from './AddContactButton.styled';
+
+// ; FaUserEdit
 
 const AddContactButton = () => {
   const [addContact, setAddContact] = useState(false);
@@ -11,12 +15,12 @@ const AddContactButton = () => {
 
   return (
     <>
-      <button type="button" onClick={toggleModal}>
-        Add contact
-      </button>
+      <SC.AddBtn type="button" onClick={toggleModal} variant="contained">
+        <FaUserPlus size="22px" />
+      </SC.AddBtn>
       {addContact && (
         <Modal toggleModal={toggleModal}>
-          <ContactForm toggleModal={toggleModal} />
+          <AddContactForm toggleModal={toggleModal} />
         </Modal>
       )}
     </>

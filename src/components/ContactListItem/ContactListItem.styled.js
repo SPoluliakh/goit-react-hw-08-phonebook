@@ -20,15 +20,19 @@ export const ListItemBtn = styled.button`
   justify-content: start;
   margin-right: ${p => p.theme.space[2]}px;
   cursor: pointer;
-  background-color: ${p => p.theme.colors.deletBtn};
-  transition: box-shadow 150ms linear;
-  padding-left: ${p => p.theme.space[2]}px;
-  padding-right: ${p => p.theme.space[2]}px;
+  background-color: transparent;
+  border-radius: 50%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  outline: none;
+  border: none;
   transition: 250ms linear;
 
   :hover,
   :focus {
     box-shadow: ${p => p.theme.shadows.deletButton};
-    background-color: ${p => p.theme.colors.deletBtn};
   }
 `;
