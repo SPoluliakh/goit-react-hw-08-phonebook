@@ -39,10 +39,9 @@ export const postContacts = createAsyncThunk(
 
 export const changeContact = createAsyncThunk(
   'contacts/changeContact',
-  async (id, newContact, rejectWithValue) => {
+  async (newContact, rejectWithValue) => {
     try {
-      const contact = await fetch.changeContact(id, newContact);
-      // const contact = await fetch.fetchContacts();
+      const contact = await fetch.changeContact(newContact);
       return contact;
     } catch (err) {
       rejectWithValue(err);

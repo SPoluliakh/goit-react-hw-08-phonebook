@@ -27,8 +27,8 @@ const ContactList = () => {
       <SC.TotalContacts>Contacts : {findContactbyName.length}</SC.TotalContacts>
 
       <SC.List>
-        {findContactbyName.map(({ name, phone, id }) => (
-          <ContactListItem key={id} name={name} number={phone} id={id} />
+        {findContactbyName.map(({ name, number, id }) => (
+          <ContactListItem key={id} name={name} number={number} id={id} />
         ))}
       </SC.List>
     </>

@@ -16,7 +16,7 @@ const AddContactButton = () => {
       </button>
       {addContact && (
         <Modal toggleModal={toggleModal}>
-          <ContactForm />
+          <ContactForm toggleModal={toggleModal} />
         </Modal>
       )}
     </>

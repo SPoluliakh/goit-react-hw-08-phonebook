@@ -52,7 +52,11 @@ export const postContacts = async contact => {
 };
 
 // Change contact
-export const changeContact = async (id, contact) => {
-  const { data } = await axios.patch(`/contacts/${id}`, contact);
+export const changeContact = async value => {
+  const contact = {
+    name: value.name,
+    number: value.number,
+  };
+  const { data } = await axios.patch(`/contacts/${value.id}`, contact);
   return data;
 };

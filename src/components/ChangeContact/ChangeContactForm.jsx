@@ -7,14 +7,21 @@ import {
   FormBtn,
 } from './ContactForm.styled';
 import PropTypes from 'prop-types';
-
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeContact } from 'Redux/contacts/contactsOperations';
+import { getContacts } from 'Redux/contacts/contactsSelectors';
 
-const ChangeContactForm = ({ id }) => {
+const ChangeContactForm = ({ id, toggleModal }) => {
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [name, setName] = useState(() => {
+    const { name } = contacts.find(contact => contact.id === id);
+    return name;
+  });
+  const [number, setNumber] = useState(() => {
+    const { number } = contacts.find(contact => contact.id === id);
+    return number;
+  });
 
   // Responsible for updating the state
   const handleInputChange = evt => {
@@ -37,9 +44,12 @@ const ChangeContactForm = ({ id }) => {
     const contactToChange = {
       name,
       number,
+      id,
     };
-    dispatch(changeContact(id, contactToChange));
+
+    dispatch(changeContact(contactToChange));
     reset();
+    toggleModal();
   };
 
   // Reset the form inputs

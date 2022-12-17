@@ -11,7 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { postContacts } from 'Redux/contacts/contactsOperations';
 import { getContacts } from '../../Redux/contacts/contactsSelectors';
 
-const ContactForm = () => {
+const ContactForm = ({ toggleModal }) => {
   const contactList = useSelector(getContacts);
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -45,6 +45,7 @@ const ContactForm = () => {
     };
     dispatch(postContacts(contactToAdd));
     reset();
+    toggleModal();
   };
 
   // Reset the form inputs

@@ -17,7 +17,7 @@ const ChangeContact = ({ id }) => {
       </button>
       {addContact && (
         <Modal toggleModal={toggleModal}>
-          <ChangeContactForm id={id} />
+          <ChangeContactForm id={id} toggleModal={toggleModal} />
         </Modal>
       )}
     </>

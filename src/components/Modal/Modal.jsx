@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 
 import { createPortal } from 'react-dom';
-// import { ImCross } from 'react-icons/im';
+import { ImCross } from 'react-icons/im';
 import { Overlay, Inner, CloseBtn } from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -33,7 +33,7 @@ export const Modal = ({ toggleModal, children }) => {
       <Inner>
         {children}
         <CloseBtn type="button" onClick={toggleModal}>
-          {/* <ImCross size="16" /> */}
+          <ImCross size="16" />
         </CloseBtn>
       </Inner>
     </Overlay>,

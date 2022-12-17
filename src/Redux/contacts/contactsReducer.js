@@ -81,11 +81,11 @@ export const contactSlice = createSlice({
     },
 
     [changeContact.fulfilled]: (state, { payload }) => {
-      const oldContacts = state.contacts.findIndex(
+      const oldContacts = state.contacts.find(
         contact => contact.id === payload.id
       );
       const newContacts = state.contacts.filter(
-        contact => contact.id !== oldContacts
+        contact => contact.id !== oldContacts.id
       );
       return {
         ...state,
