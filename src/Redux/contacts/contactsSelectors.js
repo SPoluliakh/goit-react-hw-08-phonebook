@@ -1,1 +1,8 @@
-export const getContacts = state => state.contacts.contacts;
+import { createDraftSafeSelector } from '@reduxjs/toolkit';
+
+export const getContactsState = state => state.contacts;
+
+export const getContacts = createDraftSafeSelector(
+  getContactsState,
+  state => state.contacts
+);
