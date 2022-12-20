@@ -8,6 +8,9 @@ export const register = createAsyncThunk(
       const user = await fetch.register(credentials);
       return user;
     } catch (err) {
+      if (err) {
+        throw new Error();
+      }
       thunkAPI.rejectWithValue(err);
     }
   }
@@ -21,6 +24,9 @@ export const logIn = createAsyncThunk(
 
       return user;
     } catch (err) {
+      if (err) {
+        throw new Error();
+      }
       thunkAPI.rejectWithValue(err.message);
     }
   }

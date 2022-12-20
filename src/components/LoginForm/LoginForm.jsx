@@ -29,12 +29,14 @@ export const LoginForm = () => {
             type="email"
             name="email"
             placeholder="LucasMoura@mail.com"
+            required
           />
           <SC.InputArea
             id="password"
             type="password"
             name="password"
             placeholder="**********"
+            required
           />
         </SC.InnerWrapper>
       </SC.Wrapper>

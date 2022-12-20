@@ -16,8 +16,8 @@ export const authSlice = createSlice({
     builder
 
       .addCase(register.fulfilled, (state, action) => {
-        state.user = action.payload?.user;
-        state.token = action.payload?.token;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
       })
       .addCase(register.rejected, (state, _) => {
@@ -27,8 +27,8 @@ export const authSlice = createSlice({
       })
       .addCase(logIn.pending, (state, _) => state)
       .addCase(logIn.fulfilled, (state, action) => {
-        state.user = action.payload?.user;
-        state.token = action.payload?.token;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
       })
       .addCase(logIn.rejected, (state, _) => {
